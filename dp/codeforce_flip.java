@@ -122,30 +122,27 @@ public class codeforce_flip {
         InputReader in= new InputReader(System.in);
         PrintWriter w=new PrintWriter(System.out);
         int no=in.nextInt();
-        int input_arr[]=new int[no];
         int dp[]=new int[no];
-        int count_max=0;
         int count=0;
         for(int i=0;i<no;i++){
-            input_arr[i]=in.nextInt();
-        }
-        for(int i=0;i<no;i++){
-            for(int k=0;k<no;k++){
-                dp[k]=input_arr[k];
+            int inputno=in.nextInt();
+            if(inputno==0){
+                dp[i]=1;
             }
-            for(int j=i;j<no;j++){
-                dp[j]=1-input_arr[j];
-                count=0;
-                for(int k=0;k<no;k++){
-                    if(dp[k]==1){
-                        count++;
-                    if(count>count_max)
-                        count_max=count;
-                    }
-                }
+            else{
+                count++;
+                dp[i]=-1;
             }
         }
-        w.println(count_max);
+//Implementing Kadane's Algorithm
+        int current=dp[0];
+        int max=dp[0];
+        for(int i=1;i<no;i++){
+            current=Math.max(dp[i],current+dp[i]);
+            if(current>max)
+                max=current;
+        }
+        w.println(count+max);
         w.close();
     }
 }
