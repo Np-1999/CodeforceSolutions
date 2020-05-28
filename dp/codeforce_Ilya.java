@@ -27,4 +27,4 @@ public class codeforce_Ilya {
     }
 }
 //This code logic is good bt it exceeds time limit. however when I looked into other submission 
-//They have same logic but different I/O therefore there code is working faster than mine.
+//They have same logic but different I/O therefore there code is working faster than mine..
