@@ -4,6 +4,15 @@ import java.util.Arrays;
     location. And your assigned the task of choosing chest such that it optimizes total value chosen 
     by zelda. 
 */
+/*
+    Logic: If you took last chest then you have optimal value of n-2 and value of last chest as
+    it is not possible to select chest adjacent to last chest.Therefore we took n-2.
+    If we leave last chest the optimal value will be given by n-1.
+    Therefore, 
+                leave = optimal_value(k-1)
+                and 
+                take = optimal_value(k-2) + v[k]  
+*/
 public class zeldaAndChest {
     //BackTrack Approach
     public static int backTracking(int v[],int k) {
