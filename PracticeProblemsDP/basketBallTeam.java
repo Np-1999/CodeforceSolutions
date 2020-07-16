@@ -42,6 +42,17 @@ public class basketBallTeam{
         } 
         return Math.max(dp[0][k],dp[1][k]);
     }
+    public static long experiment(int matrix[][], int size) {
+        long dp[][] = new long[2][size+1];
+        dp[0][0]=0;
+        dp[1][0]=0;
+        for(int i=1;i<=size;i++){
+            for(int k=0;k<2;k++){
+                dp[k][i] = Math.max(dp[k^1][i-1]+matrix[k][i-1],dp[k][i-1]);
+            }
+        }
+        return Math.max(dp[0][size], dp[1][size]);
+    }
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in);
@@ -53,6 +64,6 @@ public class basketBallTeam{
                 matrix[i][j] = in.nextInt(); 
             }
         }
-        System.out.println(dp(matrix,k+1));
+        System.out.println(experiment(matrix,k+1));
     }
 }

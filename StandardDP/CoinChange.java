@@ -48,8 +48,7 @@ public class CoinChange {
                 if(coinvalue>j){
                     continue;
                 }
-                value = dp[ j-coinvalue ];
-
+                value = dp[j-coinvalue];
                 if (value != Integer.MAX_VALUE){
                     value += 1;
                 }

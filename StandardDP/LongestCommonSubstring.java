@@ -1,19 +1,19 @@
 /*
-    Problem Statement :Given two strings ‘X’ and ‘Y’, find the length of the longest common substring.
+    Problem Statement :Given two strings "X" and "Y", find the length of the longest common substring.
 
         Examples :
 
-            Input : X = “GeeksforGeeks”, y = “GeeksQuiz”
+            Input : X = "GeeksforGeeks", y = "GeeksQuiz"
             Output : 5
-            The longest common substring is “Geeks” and is of length 5.
+            The longest common substring is "Geeks" and is of length 5.
 
-            Input : X = “abcdxyz”, y = “xyzabcd”
+            Input : X = "abcdxyz", y = "xyzabcd"
             Output : 4
-            The longest common substring is “abcd” and is of length 4.
+            The longest common substring is "abcd" and is of length 4.
 
-            Input : X = “zxabcdezy”, y = “yzabcdezx”
+            Input : X = "zxabcdezy", y = "yzabcdezx"
             Output : 6
-            The longest common substring is “abcdez” and is of length 6.
+            The longest common substring is "abcdez" and is of length 6.
 
     Logic: We will increment the counter when we get a match else we will reset counter to zero
     and look for some other match.
@@ -37,7 +37,7 @@ public class LongestCommonSubstring {
         int LCS[][] = new int [n+1] [m+1];
         LCS[0][0] = 0;
         int result = 0;
-        for(int i=1;i<=n;i++){
+        for(int i=1;i<=n;i++){ 
             for(int j=1;j<=m;j++){
                 if(a.charAt(i-1) ==  b.charAt(j-1)){
                     LCS[i][j] = LCS[i-1][j-1] +1;
